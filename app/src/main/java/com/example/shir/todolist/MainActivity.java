@@ -11,21 +11,25 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     public static final int ADD_TO_LIST = 1;
-    ArrayList<String> myItems = new ArrayList<String>();
+    private final ArrayList<String> myItems = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
+        myItems.add("test1");
+        myItems.add("test2");
         refreshList(myItems);
     }
 
-    public void addItem(){                                                                 //opens a new intent for adding an item
-        Intent intent= new Intent(this, NewActivity.class);
-        startActivity(intent);
+    public void addItem(View view){                                                                 //opens a new intent for adding an item
+        Intent intent= new Intent(MainActivity.this, NewActivity.class);
+        startActivityForResult(intent, ADD_TO_LIST);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){          //adds the new item to the list
+        super.onActivityResult(requestCode,resultCode,data);
         if (requestCode==ADD_TO_LIST && resultCode== RESULT_OK){
             String addItem= data.getStringExtra("NEWITEM");
             myItems.add(addItem);
@@ -33,15 +37,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void refreshList(ArrayList<String> myItems){                                     //gets the updated list
+    private void refreshList(ArrayList<String> myItems){                                     //gets the updated list
         ListView list = (ListView) findViewById(R.id.list);
         list.setAdapter(new MyListAdapter(myItems));
     }
-
-    public void openNewActivity(View view){
-        Intent intent = new Intent(MainActivity.this, NewActivity.class);
-        startActivityForResult(intent, ADD_TO_LIST);
-    }
-
 
 }

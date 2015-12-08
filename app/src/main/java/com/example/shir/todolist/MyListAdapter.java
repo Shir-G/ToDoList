@@ -15,6 +15,7 @@ import java.util.ArrayList;
  * Created by shir on 10/11/2015.
  */
 public class MyListAdapter extends BaseAdapter {
+    private static final String TAG=MyListAdapter.class.getSimpleName();
     ArrayList<String> myItems;
 
     public MyListAdapter(ArrayList<String> myItems) {
@@ -38,17 +39,19 @@ public class MyListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, final ViewGroup parent) {
         if(convertView==null){
             convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.items, parent, false);
         }
         TextView view = (TextView) convertView.findViewById(R.id.rowText);
         view.setText(myItems.get(position));
         Button button= (Button) view.findViewById(R.id.delete);
+
+        final int i=position;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                myItems.remove(position);
+                myItems.remove(i);
                 notifyDataSetChanged();
             }
         });
