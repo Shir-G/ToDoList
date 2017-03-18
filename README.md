@@ -2,7 +2,7 @@
 
 this is some text that explains to the user how to use
 
-###bonuses
+### Bonuses
 
 0.5 pt - for developing a new JSP tag 
 0.5 pt - for implementing logging messages using Log4J
@@ -10,4 +10,6 @@ this is some text that explains to the user how to use
 2 pt - for developing a nice user interface using the bootstrap library
 1 pt - for creating a website using Git Pages
 
-total = 4.5 pts.
+# Total = 4.5 pts.
+
+## Naama Kapach - Shir Gabai
