@@ -1,8 +1,13 @@
-## Welcome to to do list
+# Welcome to To Do List App
 
-this is some text that explains to the user how to use
+First, be sure to run the project on a computer with mySQL workbench.
+After running the project you can either click the "Register" button or the "Login" button (in case you are already registered).
+Then simply add a task to your todo list by filling the text field and hitting the Enter key on your keyboard.
+In order to mark a task off your list click the checklist square on its left.
 
-### Bonuses
+on any point you can log out of the system and login with another user by clicking "Logout".
+
+## Bonuses
 
 0.5 pt - for developing a new JSP tag 
 0.5 pt - for implementing logging messages using Log4J
@@ -10,6 +15,6 @@ this is some text that explains to the user how to use
 2 pt - for developing a nice user interface using the bootstrap library
 1 pt - for creating a website using Git Pages
 
-# Total = 4.5 pts.
+### Total = 4.5 pts.
 
-## Naama Kapach - Shir Gabai
+# Naama Kapach - Shir Gabai
