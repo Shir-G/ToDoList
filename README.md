@@ -2,7 +2,7 @@
 
 this is some text that explains to the user how to use
 
-##bonuses
+###bonuses
 
 0.5 pt - for developing a new JSP tag 
 0.5 pt - for implementing logging messages using Log4J
